@@ -1,6 +1,6 @@
 import express from "express";
 import "dotenv/config";
-import Client from "./Client";
+import { Client } from "@discowork/core";
 
 new Client({
   intents: 32767,

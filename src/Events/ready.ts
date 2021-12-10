@@ -1,6 +1,7 @@
 import { readdirSync } from "fs";
 import path from "path";
-import { Event } from "../Interfaces";
+
+import { Event } from "@discowork/interfaces";
 
 export const event: Event = {
   name: "ready",

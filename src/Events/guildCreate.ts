@@ -1,8 +1,9 @@
 import { Guild } from "discord.js";
 import { readdirSync } from "fs";
 import path from "path";
-import Client from "src/Client";
-import { Event } from "../Interfaces";
+
+import { Client } from "@discowork/core";
+import { Event } from "@discowork/interfaces";
 
 export const event: Event = {
   name: "guildCreate",

@@ -1,5 +1,6 @@
-import Client from "../Client";
 import { ClientEvents } from "discord.js";
+
+import { Client } from "@discowork/core";
 
 interface Run {
   (client: Client, ...args: any[]): void;

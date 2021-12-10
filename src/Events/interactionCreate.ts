@@ -1,5 +1,6 @@
-import { Event, Command } from "../Interfaces";
 import { Interaction } from "discord.js";
+
+import { Event, Command } from "@discowork/interfaces";
 
 export const event: Event = {
   name: "interactionCreate",

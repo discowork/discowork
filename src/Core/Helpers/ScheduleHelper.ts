@@ -1,7 +1,8 @@
 import { RecurrenceRule } from "node-schedule";
-import { TimerRules } from "../Interfaces";
 
-export default class ScheduleHelper {
+import { TimerRules } from "@discowork/interfaces";
+
+export class ScheduleHelper {
   static createTimerRule(rules: TimerRules): RecurrenceRule {
     const rule = new RecurrenceRule();
 

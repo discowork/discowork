@@ -16,11 +16,9 @@
     "forceConsistentCasingInFileNames": true,
     "baseUrl": ".",
     "paths": {
-      "@controllers/*": ["./src/controllers/*"],
-      "@models/*": ["./src/models/*"],
-      "@views/*": ["./src/views/*"],
-      "@config/*": ["./src/config/*"]
+      "@discowork/core": ["./src/Core"],
+      "@discowork/interfaces": ["./src/Core/Interfaces"],
+      "@discowork/helpers": ["./src/Core/Helpers"],
     }
-  },
-  "include": ["src/**/*"]
+  }
 }

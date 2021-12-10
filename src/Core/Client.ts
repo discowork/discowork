@@ -2,10 +2,11 @@ import { Client, Collection } from "discord.js";
 import { connect } from "mongoose";
 import path from "path";
 import { readdirSync } from "fs";
-import { Command, Config, Event } from "../Interfaces";
-import Schedule from "../Core/Schedule";
 
-class ExtendedClient extends Client {
+import { Schedule } from "@discowork/core";
+import { Command, Config, Event } from "@discowork/interfaces";
+
+export class ExtendedClient extends Client {
   public commands: Collection<string, Command> = new Collection();
   public events: Collection<string, Event> = new Collection();
   private schedule: Schedule = new Schedule();
@@ -62,5 +63,3 @@ class ExtendedClient extends Client {
     });
   }
 }
-
-export default ExtendedClient;

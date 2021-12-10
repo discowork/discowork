@@ -1,5 +1,6 @@
 import { RecurrenceRule } from "node-schedule";
-import Client from "../Client";
+
+import { Client } from "@discowork/core";
 
 interface CallbackProps {
   (client: Client): Promise<void>;

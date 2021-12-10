@@ -1,7 +1,6 @@
-import Client from "../Client";
-import { Schedule } from "../Interfaces";
-
-import ScheduleHelper from "../Helpers/ScheduleHelper";
+import { Client } from "@discowork/core";
+import { Schedule } from "@discowork/interfaces";
+import { ScheduleHelper } from "@discowork/helpers";
 
 export const schedule: Schedule = {
   name: "scheduleTest",
