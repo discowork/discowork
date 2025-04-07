@@ -4,8 +4,8 @@ import { ScheduleHelper } from "@discowork/helpers";
 
 export const schedule: Schedule = {
   name: "scheduleTest",
-  timerRules: ScheduleHelper.createTimerRule({ hour: 7, minute: 30 }),
+  timerRules: ScheduleHelper.createTimerRule({ hour: 17, minute: 20 }),
   callback: async (client: Client) => {
-    console.log("test");
-  },
+    console.log("ScheduleHelper is working");
+  }
 };

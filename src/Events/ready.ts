@@ -5,21 +5,21 @@ import { Event } from "@discowork/interfaces";
 
 export const event: Event = {
   name: "ready",
-  run: async client => {
+  run: async (client) => {
     console.log(`${client?.user?.tag} is online!`);
 
-    client.guilds.cache.forEach(async guild => {
+    client.guilds.cache.forEach(async (guild) => {
       try {
         const commandsToDeploy = [];
 
         const commandPath = path.join(__dirname, "..", "Commands");
-        readdirSync(commandPath).forEach(async file => {
+        readdirSync(commandPath).forEach(async (file) => {
           const { command } = require(`${commandPath}/${file}`);
 
           const commandFormatted = {
             name: command.name,
             description: command.description,
-            options: command.options,
+            options: command.options
           };
 
           commandsToDeploy.push(commandFormatted);
@@ -34,5 +34,5 @@ export const event: Event = {
         console.log(`${guild.name} Error!`);
       }
     });
-  },
+  }
 };

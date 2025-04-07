@@ -16,7 +16,7 @@ export class ExtendedClient extends Client {
     botToken: process.env.BOT_TOKEN || "",
     dbHost: process.env.DB_HOST || "",
     dbUser: process.env.DB_USER || "",
-    dbPass: process.env.DB_PASS || "",
+    dbPass: process.env.DB_PASS || ""
   };
 
   public async init() {
@@ -40,20 +40,20 @@ export class ExtendedClient extends Client {
     }
 
     const commandPath = path.join(__dirname, "..", "Commands");
-    readdirSync(commandPath).forEach(file => {
+    readdirSync(commandPath).forEach((file) => {
       const { command } = require(`${commandPath}/${file}`);
       this.commands.set(command.name, command);
     });
 
     const eventPath = path.join(__dirname, "..", "Events");
-    readdirSync(eventPath).forEach(async file => {
+    readdirSync(eventPath).forEach(async (file) => {
       const { event } = await import(`${eventPath}/${file}`);
       this.events.set(event.name, event);
       this.on(event.name, event.run.bind(null, this));
     });
 
     const schedulePath = path.join(__dirname, "..", "Schedules");
-    readdirSync(schedulePath).forEach(async file => {
+    readdirSync(schedulePath).forEach(async (file) => {
       const { schedule } = await import(`${schedulePath}/${file}`);
       this.schedule.add(
         schedule.name,

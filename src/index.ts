@@ -1,6 +1,7 @@
 import express from "express";
 import "dotenv/config";
 import { Client } from "@discowork/core";
+import { ActivityType } from "discord.js";
 
 new Client({
   intents: 32767,
@@ -10,10 +11,10 @@ new Client({
     activities: [
       {
         name: "/comandos",
-        type: "LISTENING",
-      },
-    ],
-  },
+        type: ActivityType.Listening
+      }
+    ]
+  }
 }).init();
 
 const server = express();

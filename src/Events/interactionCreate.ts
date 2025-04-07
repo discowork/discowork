@@ -20,5 +20,5 @@ export const event: Event = {
 
       await interaction.reply(response);
     }
-  },
+  }
 };

@@ -11,13 +11,13 @@ export const event: Event = {
     const commandsToDeploy = [];
 
     const commandPath = path.join(__dirname, "..", "Commands");
-    readdirSync(commandPath).forEach(async file => {
+    readdirSync(commandPath).forEach(async (file) => {
       const { command } = require(`${commandPath}/${file}`);
 
       const commandFormatted = {
         name: command.name,
         description: command.description,
-        options: command.options,
+        options: command.options
       };
 
       commandsToDeploy.push(commandFormatted);
@@ -26,5 +26,5 @@ export const event: Event = {
     await guild.commands.set(commandsToDeploy);
 
     console.log("Deployed");
-  },
+  }
 };
